@@ -9,7 +9,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://reelsave.vercel.app/"],  # <-- Change "*" to your frontend domain for security
+    allow_origins=["https://reelsave.vercel.app"],  # <-- Change "*" to your frontend domain for security
     allow_credentials=True,
     allow_methods=["*"],   # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"], 
