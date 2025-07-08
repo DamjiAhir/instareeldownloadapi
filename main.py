@@ -52,9 +52,9 @@ def get_instagram_reel(url: str):
 
         # Extract media URLs
         caption = ''
-        media_links = ''
+        media_links = []
         if reel.is_video:
-            media_links = reel.video_url
+            media_links = [reel.video_url]
             caption = reel.caption
         else:
             for resource in reel.get_sidecar_nodes():
@@ -67,7 +67,7 @@ def get_instagram_reel(url: str):
 
 
 @app.get("/get-posts")
-def get_instagram_reel(url: str):
+def get_instagram_post(url: str):
     try:
         # Extract shortcode from URL
         match = re.search(INSTAGRAM_URL_PATTERN, url)
